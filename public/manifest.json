@@ -10,7 +10,7 @@
   "description": "A Qwik project app.",
   "icons": [
     {
-      "src": "alarm.svg",
+      "src": "pomodoro.png",
       "sizes": "any",
       "type": "image/svg+xml"
     }
