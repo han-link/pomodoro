@@ -77,19 +77,30 @@ export default component$(() => {
       }
     }
 
-    const id = setInterval(() => {
+    // Start Worker
+    const worker = new Worker("/scripts/worker/time-worker.js");
+    worker.postMessage(`start-timer_${timer.time.value}`);
+
+    worker.onmessage = (e) => {
+      const elapsedTime = parseInt(e.data);
       if (timer.time.value > 0) {
-        timer.time.value--;
+        timer.time.value -= elapsedTime;
       } else {
         timer.isRunning.value = false;
         if (typeof Notification !== "undefined") {
           new Notification("Your timer is up!");
         }
-        clearInterval(id);
       }
-    }, 1000);
+    };
 
-    cleanup(() => clearInterval(id));
+    worker.onerror = () => {
+      timer.isRunning.value = false;
+    }
+
+    cleanup(() => {
+      worker.postMessage("stop-timer");
+      worker.terminate();
+    });
   });
 
   return (
