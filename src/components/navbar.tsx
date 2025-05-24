@@ -33,6 +33,7 @@ export const Navbar = component$(() => {
             </li>
             <li class="flex items-center gap-x-2 p-1 text-sm text-slate-600">
               <button
+                aria-label="Open settings"
                 data-dialog-target="settings-modal"
                 class="flex cursor-pointer items-center gap-1"
               >
