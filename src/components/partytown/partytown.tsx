@@ -8,8 +8,7 @@ import { partytownSnippet } from "@builder.io/partytown/integration";
  *
  * @public
  */
-export interface PartytownProps extends PartytownConfig {
-}
+export interface PartytownProps extends PartytownConfig {}
 
 /**
  * @public

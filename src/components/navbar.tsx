@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { GoMarkGithub16 } from "@qwikest/icons/octicons";
-import PomodoroImg from "~/assets/pomodoro.png?w=64&h=64&jsx"
+import PomodoroImg from "~/assets/pomodoro.png?w=64&h=64&jsx";
 
 export const Navbar = component$(() => {
   return (
@@ -11,16 +11,22 @@ export const Navbar = component$(() => {
             href="/"
             class="flex items-center gap-2 py-1.5 text-base font-semibold text-slate-800 transition-colors hover:text-slate-600"
           >
-            <PomodoroImg class="w-[30px] h-[30px] rounded" alt="Pomodoro Logo"/>
+            <PomodoroImg
+              class="h-[30px] w-[30px] rounded"
+              alt="Pomodoro Logo"
+            />
             <span>Pomodoro</span>
           </a>
         </nav>
 
         <div>
-          <ul class="flex mt-0 mb-0 flex-row items-center gap-6">
+          <ul class="mt-0 mb-0 flex flex-row items-center gap-6">
             <li class="flex items-center gap-x-2 p-1 text-sm text-slate-600">
-              <a href="https://github.com/han-link/pomodoro" class="flex items-center gap-1">
-                <GoMarkGithub16/>
+              <a
+                href="https://github.com/han-link/pomodoro"
+                class="flex items-center gap-1"
+              >
+                <GoMarkGithub16 />
                 Github
               </a>
             </li>
