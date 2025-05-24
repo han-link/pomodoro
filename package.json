@@ -42,7 +42,8 @@
     "undici": "*",
     "vite": "5.3.5",
     "vite-tsconfig-paths": "^4.2.1",
-    "wrangler": "^3.0.0"
+    "wrangler": "^3.0.0",
+    "@qwikest/icons": "^0.0.13"
   },
   "dependencies": {
     "@material-tailwind/html": "^3.0.0-beta.7"
