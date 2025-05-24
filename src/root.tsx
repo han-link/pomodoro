@@ -34,6 +34,7 @@ export default component$(() => {
         {!isDev && <ServiceWorkerRegister />}
         <script src="scripts/collapse.js"></script>
         <script src="scripts/ripple.js"></script>
+        <script src="scripts/dialog.js"></script>
       </body>
     </QwikCityProvider>
   );

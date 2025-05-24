@@ -1,13 +1,13 @@
 {
-  "name": "qwik-project-name",
+  "name": "Pomodoro",
   "lang": "en-US",
-  "short_name": "Welcome to Qwik",
+  "short_name": "Pomodoro",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#030b28",
   "theme_color": "#088395",
   "orientation": "natural",
-  "description": "A Qwik project app.",
+  "description": "A simple pomodoro timer.",
   "icons": [
     {
       "src": "pomodoro.png",

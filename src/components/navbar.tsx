@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { GoMarkGithub16 } from "@qwikest/icons/octicons";
+import { GoMarkGithub16, GoGear24 } from "@qwikest/icons/octicons";
 import PomodoroImg from "~/assets/pomodoro.png?w=64&h=64&jsx";
 
 export const Navbar = component$(() => {
@@ -14,6 +14,7 @@ export const Navbar = component$(() => {
             <PomodoroImg
               class="h-[30px] w-[30px] rounded"
               alt="Pomodoro Logo"
+              loading="eager"
             />
             <span>Pomodoro</span>
           </a>
@@ -29,6 +30,14 @@ export const Navbar = component$(() => {
                 <GoMarkGithub16 />
                 Github
               </a>
+            </li>
+            <li class="flex items-center gap-x-2 p-1 text-sm text-slate-600">
+              <button
+                data-dialog-target="settings-modal"
+                class="flex cursor-pointer items-center gap-1"
+              >
+                <GoGear24 />
+              </button>
             </li>
           </ul>
         </div>
