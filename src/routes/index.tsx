@@ -125,7 +125,7 @@ export default component$(() => {
               data-ripple-dark="true"
               onClick$={() => (selected.value = "pomodoro")}
               disabled={timer.isRunning.value}
-              class="bg-white-900 w-full cursor-pointer rounded-lg border border-gray-900/10 px-6 py-3 font-sans text-xs font-bold uppercase select-none hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              class="bg-white-900 w-full cursor-pointer rounded-lg border border-gray-900/10 px-6 py-3 font-sans  text-sm font-bold uppercase select-none hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             >
               Pomodoro
             </button>
@@ -136,7 +136,7 @@ export default component$(() => {
               data-ripple-dark="true"
               onClick$={() => (selected.value = "shortBreak")}
               disabled={timer.isRunning.value}
-              class="bg-white-900 w-full cursor-pointer rounded-lg border border-gray-900/10 px-6 py-3 font-sans text-xs font-bold uppercase select-none hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              class="bg-white-900 w-full cursor-pointer rounded-lg border border-gray-900/10 px-6 py-3 font-sans text-sm font-bold uppercase select-none hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             >
               Short Break
             </button>
@@ -147,7 +147,7 @@ export default component$(() => {
               data-ripple-dark="true"
               onClick$={() => (selected.value = "longBreak")}
               disabled={timer.isRunning.value}
-              class="bg-white-900 w-full cursor-pointer rounded-lg border border-gray-900/10 px-6 py-3 font-sans text-xs font-bold uppercase select-none hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              class="bg-white-900 w-full cursor-pointer rounded-lg border border-gray-900/10 px-6 py-3 font-sans text-sm font-bold uppercase select-none hover:bg-slate-100 focus:bg-slate-100 active:bg-slate-100 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             >
               Long Break
             </button>
@@ -157,7 +157,7 @@ export default component$(() => {
             type="button"
             data-ripple-light="true"
             onClick$={() => (timer.isRunning.value = !timer.isRunning.value)}
-            class="w-full cursor-pointer rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold text-white uppercase shadow-md shadow-gray-900/10 transition-all select-none hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            class="w-full cursor-pointer rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans font-bold text-white uppercase shadow-md shadow-gray-900/10 transition-all select-none hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
             {!timer.isRunning.value ? "Start" : "Stop"}
           </button>

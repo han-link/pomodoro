@@ -21,23 +21,23 @@ export const Navbar = component$(() => {
         </nav>
 
         <div>
-          <ul class="mt-0 mb-0 flex flex-row items-center gap-6">
-            <li class="flex items-center gap-x-2 p-1 text-sm text-slate-600">
+          <ul class="mt-0 mb-0 flex flex-row items-center justify-center gap-6">
+            <li class="flex items-center gap-x-2 p-1 text-slate-600">
               <a
                 href="https://github.com/han-link/pomodoro"
-                class="flex items-center gap-1"
+                class="flex items-center gap-1 rounded-md border border-slate-300 py-2 px-4 text-center transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
               >
                 <GoMarkGithub16 />
                 Github
               </a>
             </li>
-            <li class="flex items-center gap-x-2 p-1 text-sm text-slate-600">
+            <li class="flex items-center gap-x-2 p-1 text-slate-600">
               <button
                 aria-label="Open settings"
                 data-dialog-target="settings-modal"
-                class="flex cursor-pointer items-center gap-1"
+                class="flex cursor-pointer items-center gap-1 w-[30px] h-[30px]"
               >
-                <GoGear24 />
+                <GoGear24 class="w-full h-full"/>
               </button>
             </li>
           </ul>
