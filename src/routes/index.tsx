@@ -1,4 +1,4 @@
-import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { CountdownTimer } from "~/components/countdown-timer";
 import { useContextProvider, createContextId } from "@builder.io/qwik";
@@ -31,6 +31,12 @@ export default component$(() => {
   const selected = useSignal<"pomodoro" | "shortBreak" | "longBreak">(
     "pomodoro",
   );
+
+  const notifyEnd = $(() => {
+    if (typeof Notification !== "undefined") {
+      new Notification("Your timer is up!");
+    }
+  });
 
   useTask$(({ track }) => {
     track(() => selected.value);
@@ -77,25 +83,29 @@ export default component$(() => {
       }
     }
 
+    if (timer.time.value < 1) {
+      await notifyEnd();
+      timer.isRunning.value = false;
+      return;
+    }
+
     // Start Worker
-    const worker = new Worker("/scripts/worker/time-worker.js");
+    const worker = new Worker("/scripts/worker/timer.js");
     worker.postMessage(`start-timer_${timer.time.value}`);
 
-    worker.onmessage = (e) => {
+    worker.onmessage = async (e) => {
       const elapsedTime = parseInt(e.data);
       if (timer.time.value > 0) {
         timer.time.value -= elapsedTime;
       } else {
         timer.isRunning.value = false;
-        if (typeof Notification !== "undefined") {
-          new Notification("Your timer is up!");
-        }
+        await notifyEnd();
       }
     };
 
     worker.onerror = () => {
       timer.isRunning.value = false;
-    }
+    };
 
     cleanup(() => {
       worker.postMessage("stop-timer");
